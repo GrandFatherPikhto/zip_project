@@ -17,7 +17,7 @@ class ConfigLoader:
     def _find_config_path(self, provided_path: Optional[str] = None) -> Path:
         """Определяет путь к конфигу в порядке: аргумент -> рядом с exe -> cwd -> создаёт в cwd."""
         if provided_path:
-            return Path(provided_path).absolute()
+            return Path(provided_path).expanduser().absolute()
 
         # Путь к исполняемому файлу (или скрипту)
         if getattr(sys, 'frozen', False):

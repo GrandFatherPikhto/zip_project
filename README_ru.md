@@ -248,6 +248,12 @@ pyinstaller --onefile --hidden-import yaml --hidden-import pydantic --name zip_p
 pyinstaller --onefile --distpath D:\Utils --hidden-import yaml --hidden-import pydantic --name zip_project run.py
 ```
 
+Или, например под `Linux`
+
+```bash
+pyinstaller --onefile --distpath ~/.local/bin --hidden-import yaml --hidden-import pydantic --name zip_project run.py
+```
+
 ### Быстрая пересборка через `.spec`
 При первой компиляции создаётся файл `zip_project.spec`. При последующих изменениях кода достаточно выполнить:
 ```bash

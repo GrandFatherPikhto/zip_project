@@ -46,7 +46,7 @@ class ConfigResolver:
 
     def _resolve_path(self, path_str: str) -> Path:
         """Преобразует относительный путь в абсолютный относительно config_dir."""
-        p = Path(path_str)
+        p = Path(path_str).expanduser()
         if p.is_absolute():
             return p.resolve()
         else:

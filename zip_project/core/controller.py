@@ -33,14 +33,18 @@ class Controller:
             return
 
         # Запись манифеста
-        output_manifest = self.config_dir / resolved_config.manifest.file
+        output_manifest = self._resolve_output_path(resolved_config.manifest.file)
         writer = ManifestWriter(resolved_config, resolved_config.resolved_base_dirs)
         writer.write(files, output_manifest)
 
         # Архивация
         if resolved_config.archive.enabled and files:
-            output_archive = self.config_dir / resolved_config.archive.file
+            output_archive = self._resolve_output_path(resolved_config.archive.file)
             archiver = Archiver(resolved_config, resolved_config.resolved_base_dirs)
             archiver.archive(files, output_archive)
         elif resolved_config.archive.enabled:
             logger.warning("No files to archive")
+
+    def _resolve_output_path(self, path_str: str) -> Path:
+        p = Path(path_str).expanduser()
+        return p if p.is_absolute() else (self.config_dir / p)
