@@ -1,5 +1,9 @@
 Windows Registry Editor Version 5.00
 
+; -----------------------------------------------------------------------------
+; Remove context menu for zip_project.yaml / zip_project.yml
+; -----------------------------------------------------------------------------
+
 [-HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.yaml\Shell\ZipProject]
 [-HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.yml\Shell\ZipProject]
 [-HKEY_CURRENT_USER\Software\Classes\Directory\Shell\ZipProject]
