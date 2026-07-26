@@ -51,8 +51,7 @@ manifest:
 # --- Настройки архива ---
 archive:
   enabled: true                         # Включить архивацию (бывший make_zip)
-  file: "arch/zip_project_v302.zip"     # Путь к архиву (бывший output_zip_file)
+  file: "arch/zip_project_v400.zip"     # Путь к архиву (бывший output_zip_file)
   format: "zip"                         # zip или tar.gz
   compression_level: 6                  # 0-9 (для zip и tar.gz)
   password: null                        # Пароль для zip (пока не реализован)
-  

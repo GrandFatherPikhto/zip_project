@@ -19,6 +19,7 @@ venv/
 # zip_project's own generated output (manifest / archive)
 /zip_project.txt
 /arch/*.zip
+/old/
 
 # Claude Code local settings (machine-specific)
 .claude/settings.local.json
