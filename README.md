@@ -241,12 +241,21 @@ pip install pyyaml pydantic
 
 ### Building with PyInstaller
 ```bash
-pyinstaller --onefile --hidden-import yaml --hidden-import pydantic --name zip_project zip_project.py
+pyinstaller --onefile --hidden-import yaml --hidden-import pydantic --name zip_project run.py
 ```
 It is recommended to specify `--distpath` to save to your utilities folder, for example:
 ```bash
-pyinstaller --onefile --distpath D:\Utils --hidden-import yaml --hidden-import pydantic --name zip_project zip_project.py
+pyinstaller --onefile --distpath D:\Utils --hidden-import yaml --hidden-import pydantic --name zip_project run.py
 ```
+
+Or in Linux:
+
+Или, например под `Linux`
+
+```bash
+pyinstaller --onefile --distpath ~/.local/bin --hidden-import yaml --hidden-import pydantic --name zip_project run.py
+```
+
 
 ### Quick Rebuild via `.spec`
 On the first compilation, PyInstaller creates a `zip_project.spec` file. For subsequent code changes, simply run:
