@@ -1,0 +1,58 @@
+# zip_project.yaml — улучшенная конфигурация для Zip Project
+
+# --- Общие настройки ---
+project_name: "MyProject"               # Опционально, для идентификации
+base_working_dir: "D:/Projects/Python/Zip_Project"   # Может быть списком папок
+encoding: "utf-8"                       # Кодировка для чтения/записи
+dry_run: false                          # true = только показать, что будет сделано
+
+# --- Что сканировать ---
+scan_dirs:                              # Папки для обхода (бывшие include_dirs)
+  - "."                                 # Относительно base_working_dir
+
+single_files: []                        # Отдельные файлы (бывшие include_files)
+
+# --- Фильтры включения ---
+extensions:                             # Расширения для включения (бывшие target_extensions)
+  - ".py"
+  - ".md"
+
+# --- Исключения (glob-паттерны) ---
+exclude_patterns:                       # Объединяет exclude_dirs и exclude_files
+  - "**/__pycache__"                    # Рекурсивно исключить все папки __pycache__
+  - "**/.venv"
+  - "**/venv"
+  - "**/.git"
+  - "**/old"                            # Теперь можно исключать любую вложенную old
+  - "**/files"
+  - "tests/temp"                        # Относительный путь
+  - "**/local_settings.py"              # Конкретные файлы
+  - "**/.env"
+  - "**/zip_project.txt"                # Исключаем выходной файл (автоматически)
+  - "**/arch/zip_project_v302.zip"      # Исключаем архив (автоматически)
+  - "**/zip_project.yaml"               # Исключаем сам конфиг (автоматически)
+
+# Дополнительные исключения по расширениям
+exclude_extensions:                     # Файлы с этими расширениями не брать
+  - ".log"
+  - ".tmp"
+  # Можно добавить свои
+
+# --- Ограничения по размеру и дате ---
+max_file_size_mb: null                  # Максимальный размер в МБ (null = без ограничений)
+min_file_age_days: null                 # Минимальный возраст (дней), 0 = только сегодня, null = все
+
+# --- Настройки выходного манифеста (списка файлов) ---
+manifest:
+  file: "zip_project.txt"               # Имя файла списка (бывший output_list_file)
+  format: "plain"                       # Варианты: plain, json, csv
+  include_metadata: false               # Добавить размер и дату модификации
+
+# --- Настройки архива ---
+archive:
+  enabled: true                         # Включить архивацию (бывший make_zip)
+  file: "arch/zip_project_v302.zip"     # Путь к архиву (бывший output_zip_file)
+  format: "zip"                         # zip или tar.gz
+  compression_level: 6                  # 0-9 (для zip и tar.gz)
+  password: null                        # Пароль для zip (пока не реализован)
+  

@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+
+# PyInstaller build output
+/build/
+/dist/
+/zip_project.spec
+
+# Testing
+.pytest_cache/
+.coverage
+
+# zip_project's own generated output (manifest / archive)
+/zip_project.txt
+/arch/*.zip
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json
+
+# OS junk
+Thumbs.db
+.DS_Store

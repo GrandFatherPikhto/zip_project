@@ -1,0 +1,30 @@
+Windows Registry Editor Version 5.00
+
+; -----------------------------------------------------------------------------
+; Контекстное меню для файлов zip_project.yaml / zip_project.yml
+; -----------------------------------------------------------------------------
+
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.yaml\Shell\ZipProject]
+@="Собрать проект (zip_project)"
+"Icon"="imageres.dll,-68"
+
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.yaml\Shell\ZipProject\command]
+@="\"D:\\Utils\\zip_project.exe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.yml\Shell\ZipProject]
+@="Собрать проект (zip_project)"
+"Icon"="imageres.dll,-68"
+
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.yml\Shell\ZipProject\command]
+@="\"D:\\Utils\\zip_project.exe\" \"%1\""
+
+; -----------------------------------------------------------------------------
+; Контекстное меню для папок (ищет zip_project.yaml внутри папки)
+; -----------------------------------------------------------------------------
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Shell\ZipProject]
+@="Собрать проект (zip_project)"
+"Icon"="imageres.dll,-68"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Shell\ZipProject\command]
+@="\"D:\\Utils\\zip_project.exe\" \"%1\\zip_project.yaml\""
